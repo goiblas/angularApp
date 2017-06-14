@@ -15,6 +15,12 @@
 
 ## Esqueleto de la aplicación
 - Elimino el componente pricipal `app`
-- creo el modulos core y el componente core/shell
+- creo el modulos core y el componente core/shell lo exporto y lo utilizo en vez de app-root
+- creo los otros modulo (about, home...) declaro pero no importo
 
+### lasyLoad 
+- la carga se hace por módulos no por componenetes
+- `loadChildren: './../home/home.module.ts#HomeModule'`
 
+### componentes sin carpeta
+- `ng g c home/home --flat true` 
