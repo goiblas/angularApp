@@ -35,8 +35,9 @@ export class CashComponent implements OnInit {
     const isInvalid = control.value && (isNaN(control.value) || control.value < 1);
 
     if (isInvalid) {
-      return {'': true};
+      return {'Debe de ser un número mayor de 1': true};
     }
+    // retorno null cuando no hay errores
     return null
   }
 }

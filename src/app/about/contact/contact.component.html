@@ -3,11 +3,13 @@
         <div>
         <label for="sender">Sender
             <input id="sender" type="text" formControlName="sender">
+            <span class="error" *ngIf="!contactForm.get('sender').valid">Error</span>
         </label>
         </div>
         <div>
         <label for="subject">subject
             <input id="subject" type="text" formControlName="subject">
+            <span class="error" *ngIf="(contactForm.get('subject').touched || contactForm.get('subject').dirty )&& !contactForm.get('subject').valid">Error</span>
         </label>
         </div>
         <div>
