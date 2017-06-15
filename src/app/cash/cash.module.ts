@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about.component';
+import { CashComponent } from './cash.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
  {
    path: '',
-   component: AboutComponent
+   component: CashComponent
  }
 ];
+
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule, // importar el nuevo contralador de forms
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AboutComponent, ContactComponent]
+  declarations: [CashComponent]
 })
-export class AboutModule { }
+export class CashModule { }

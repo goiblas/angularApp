@@ -20,7 +20,9 @@
 
 ### lasyLoad 
 - la carga se hace por módulos no por componenetes
-- `loadChildren: './../home/home.module.ts#HomeModule'`
+- en core.module `loadChildren: './../home/home.module.ts#HomeModule'`
+- y en cada compente que carga `RouterModule.forChild(routes)` y la ruta
+
 
 ### componentes sin carpeta
 - `ng g c home/home --flat true` 

@@ -1,0 +1,23 @@
+<form (submit)="sendForm()" [formGroup]="operationForm">
+    <fieldset>
+        <div>
+        <label>Date
+            <input type="date" formControlName="date">
+        </label>
+        </div>
+        <div>
+        <label>amount
+            <input type="number" formControlName="amount">
+        </label>
+        </div>
+        <div>
+        <label>Operation type
+            <input type="number" formControlName="operationType">
+        </label>
+        </div>
+    </fieldset>
+    <button type="submit" [disabled]="!operationForm.valid">Send</button>
+</form>
+<ul>
+    <li>{{ operationForm.value | json }}</li>
+</ul>

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <nav>
       <a [routerLink]="[ '' ]" class="button button-clear">Home</a>
       <a [routerLink]="[ 'about' ]" class="button button-clear">About</a>
+      <a [routerLink]="[ 'cash' ]" class="button button-clear">Cash</a>
     </nav>
   `,
   styles: []

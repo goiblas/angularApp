@@ -1,0 +1,23 @@
+<form (submit)="sendForm()" [formGroup]="contactForm">
+    <fieldset>
+        <div>
+        <label for="sender">Sender
+            <input id="sender" type="text" formControlName="sender">
+        </label>
+        </div>
+        <div>
+        <label for="subject">subject
+            <input id="subject" type="text" formControlName="subject">
+        </label>
+        </div>
+        <div>
+        <label for="bdoy">Message
+            <input id="bdoy" type="text" formControlName="body">
+        </label>
+        </div>
+    </fieldset>
+    <button type="submit" [disabled]="!contactForm.valid">Send</button>
+</form>
+<ul>
+    <li>{{ contactForm.value | json }}</li>
+</ul>
