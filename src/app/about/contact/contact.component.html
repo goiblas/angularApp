@@ -3,20 +3,27 @@
         <div>
         <label for="sender">Sender
             <input id="sender" type="text" formControlName="sender">
-            <span class="error" *ngIf="!contactForm.get('sender').valid">Error</span>
+            <span class="error" *ngIf="showError('sender')">
+                Sender is required
+            </span>
         </label>
         </div>
         <div>
         <label for="subject">subject
             <input id="subject" type="text" formControlName="subject">
-            <span class="error" *ngIf="(contactForm.get('subject').touched || contactForm.get('subject').dirty )&& !contactForm.get('subject').valid">Error</span>
+            <span class="error" *ngIf="showError('subject')">
+                {{ contactForm.get('subject').errors | json}}
+            </span>
         </label>
         </div>
-        <div>
-        <label for="bdoy">Message
-            <input id="bdoy" type="text" formControlName="body">
-        </label>
-        </div>
+
+            <goi-input
+                label="Message"
+                field="body"
+                type="textarea"
+                [form]= "contactForm"
+            ></goi-input>
+
     </fieldset>
     <button type="submit" [disabled]="!contactForm.valid">Send</button>
 </form>

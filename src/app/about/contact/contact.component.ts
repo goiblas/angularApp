@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { InputComponent } from './../../shared/input/input.component';
 
 @Component({
   selector: 'goi-contact',
@@ -22,6 +23,12 @@ export class ContactComponent implements OnInit {
       body: ['']
     });
   }
+
+    showError(fieldName: string) {
+      const ncontrol = this.contactForm.get(fieldName);
+      return (ncontrol.touched || ncontrol.dirty ) && !ncontrol.valid;
+    }
+
     sendForm(){
       console.log(this.contactForm)
     }

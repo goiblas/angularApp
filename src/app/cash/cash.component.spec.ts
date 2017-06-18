@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InputComponent } from './../shared/input/input.component';
+import { StorageComponent } from './storage/storage.component';
 
 import { CashComponent } from './cash.component';
 
@@ -8,7 +11,8 @@ describe('CashComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CashComponent ]
+      declarations: [ CashComponent, InputComponent, StorageComponent ],
+      imports: [ReactiveFormsModule]
     })
     .compileComponents();
   }));

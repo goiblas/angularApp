@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HomeComponent } from './home.component';
-import { ChartsModule} from 'ng2-charts';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+import { StorageComponent } from './storage.component';
+
+describe('StorageComponent', () => {
+  let component: StorageComponent;
+  let fixture: ComponentFixture<StorageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, ChartsModule ]
+      declarations: [ StorageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(StorageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

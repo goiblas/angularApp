@@ -1,14 +1,28 @@
-import { AngularAppPage } from './app.po';
+import { HomePage } from './app.po';
+import { CashPage } from './cash.po';
+
 
 describe('angular-app App', () => {
-  let page: AngularAppPage;
+  let homePage: HomePage;
+  let cashPage: CashPage;
 
   beforeEach(() => {
-    page = new AngularAppPage();
+    homePage = new HomePage();
+    cashPage = new CashPage();
   });
 
   it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    homePage.navigateTo();
+    expect(homePage.getParagraphText()).toEqual('home Works!');
+  });
+
+  it('should diplay storage title ', () => {
+    cashPage.navigateTo();
+    expect(cashPage.getParagraphText()).toEqual('Cash Storage');
+  });
+
+  it('should generate new operation ', () => {
+    cashPage.navigateTo();
+    cashPage.createOperation();
   });
 });

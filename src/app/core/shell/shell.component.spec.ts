@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { MainContentComponent } from './main-content/main-content.component';
+import { CommonModule } from '@angular/common';
+
+import { SharedModule } from './../../shared/shared.module';
 
 import { ShellComponent } from './shell.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ShellComponent', () => {
   let component: ShellComponent;
@@ -8,7 +14,8 @@ describe('ShellComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShellComponent ]
+      imports: [RouterTestingModule, SharedModule],
+      declarations: [ ShellComponent , TopBarComponent, MainContentComponent]
     })
     .compileComponents();
   }));

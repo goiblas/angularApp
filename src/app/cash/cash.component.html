@@ -1,15 +1,28 @@
-<form (submit)="sendForm()" [formGroup]="operationForm">
+<form (submit)="sendForm($event)" [formGroup]="operationForm">
     <fieldset>
+
+        <goi-input
+            label="Date"
+            type="date"
+            field="date"
+            [form]="operationForm"
+            ></goi-input>
         <div>
-        <label>Date
-            <input type="date" formControlName="date">
+
+        <label >Description
+            <input type="text" formControlName="description">
+            <span class="error" *ngIf="formTools.hasErrorToShow('description')">
+                Description is required
+            </span>
         </label>
         </div>
-        <div>
-        <label>amount
-            <input type="number" formControlName="amount">
-        </label>
-        </div>
+        <goi-input
+            class="fieldDescription"
+            label="Amount"
+            type="number"
+            field="amount"
+            [form]="operationForm"
+            ></goi-input>
         <div>
         <label>Operation type
             <input type="number" formControlName="operationType">
@@ -21,3 +34,5 @@
 <ul>
     <li>{{ operationForm.value | json }}</li>
 </ul>
+
+<goi-storage [storage]="storage"></goi-storage>

@@ -4,6 +4,7 @@ import { AboutComponent } from './about.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './../shared/shared.module';
 
 const routes: Routes = [
  {
@@ -14,6 +15,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     ReactiveFormsModule, // importar el nuevo contralador de forms
     RouterModule.forChild(routes)
   ],
