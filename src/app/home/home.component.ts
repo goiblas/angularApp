@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
       home Works!
     </p>
   <div>
-
+  <canvas
+      name="bar-chart"
+      baseChart
+      [datasets]="chartData"
+      [labels]="chartLabels"
+      [options]="chartOptions"
+      legend="true"
+      chartType="bar"></canvas>
    </div>
   `,
   styles: []
