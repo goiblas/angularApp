@@ -1,0 +1,65 @@
+
+
+<div class="auth-page">
+
+
+<div class="auth-warpper">
+  <div class="auth-form">
+    <md-tab-group>
+      <md-tab label="Acceder">
+<form (submit)="validarUser()" [formGroup]="signinForm">
+
+      <md-input-container>
+        <input mdInput placeholder="E-mail" type="email" formControlName="email">
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="Password" type="password" formControlName="pass">
+      </md-input-container>
+
+      <button md-raised-button type="submit" [disabled]="!signinForm.valid" class="btnForm">Registrar Usuario</button>
+      
+ </form>
+
+      </md-tab>
+      <md-tab label="registrarse">
+
+<form (submit)="registrarUser()" [formGroup]="loginForm">
+
+      <md-input-container>
+        <input mdInput placeholder="Nombre" type="text" formControlName="nombre" required>
+      </md-input-container>
+
+
+      <md-input-container>
+        <input mdInput placeholder="E-mail" type="email" formControlName="email" required>
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="Password" type="password" formControlName="pass" required>
+      </md-input-container>
+      <goi-control-password
+      [cvalue]="loginForm.value.pass"
+      [msg] = "getTextError('pass')"
+      ></goi-control-password>
+
+      <button md-raised-button type="submit" [disabled]="!loginForm.valid" class="btnForm">Registrar Usuario</button>
+      
+      <div class="error" *ngIf="showErrors('pass')">{{getTextError('pass')}} </div>
+ </form>
+
+
+      </md-tab>
+    </md-tab-group>
+  </div>
+
+  <div class="acceso-spacer"> o </div>
+  <div class="auth-buttons">
+
+  <button md-raised-button class="buttonLogin loginWithGoogle" (click)="loginWithGoogle()">Acceso con google</button>
+  <button md-raised-button class="buttonLogin loginWithAnonymous" (click)="loginWithAnonymous()">Acceso anónimo</button>
+  </div>
+</div>
+
+</div>
+

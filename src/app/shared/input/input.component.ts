@@ -36,7 +36,7 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
-  getTextError(){
+  getTextError() {
     const error = this.form.get(this.field).errors;
     return error && Object.keys(error)[0];
   }

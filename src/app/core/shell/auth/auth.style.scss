@@ -1,0 +1,88 @@
+.auth-page{
+    min-height: 100vh;
+    display: flex;
+}
+
+.auth-warpper {
+    display: flex;
+    width: 92%;
+    max-width: 860px;
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form {
+    padding: 3vh 0;
+}
+
+input, md-input-container {
+    width: 100%;
+}
+.auth-form {
+    min-height: 300px;
+}
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.buttonLogin {
+    width: 90%;
+    margin: 6px auto;
+}
+
+.btnForm {
+    background-color: #b6d247;
+}
+.loginWithGoogle {
+   background-color: #2b9af9;
+}
+
+.auth-form,
+.auth-buttons {
+    width:38%;
+}
+
+%line {
+    height: 32%;
+    position: absolute;
+    width: 1px;
+    background: #f0f0f0;
+    display: block;
+    content: "";
+    left: 50%;
+}
+.acceso-spacer {
+    flex: 0 1 40px;
+    line-height: 100%;
+    position: relative;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+
+    &::after {
+        @extend %line;
+        top: 0;
+    }
+
+    &::before {
+        @extend %line;
+        bottom: 0;
+    }
+}
+
+@media (max-width: 680px){
+    .acceso-spacer {
+        display: none;
+    }
+    .auth-warpper {
+        flex-direction: column;
+    }
+    .auth-form,
+    .auth-buttons {
+        width:100%;
+        max-width: 420px;
+        margin: auto;
+    }
+}

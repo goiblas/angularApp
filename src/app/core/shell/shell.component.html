@@ -1,0 +1,31 @@
+ 
+<div *ngIf="(user | async)?.uid">
+
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button>
+    <span>Aplicación</span>
+    <span class="header-spacer"></span>
+    <span class="">{{(user | async)?.displayName}}</span>
+    <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+
+</md-toolbar>
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item (click)="logout($event)"> Desconectar </button>
+</md-menu>
+
+<md-sidenav-container>
+   <md-sidenav #sidenav class="example-sidenav" [opened]="stateSide" [mode]="modeSide">
+     <goi-top-bar></goi-top-bar>
+  </md-sidenav>
+
+
+   <goi-main-content></goi-main-content>
+</md-sidenav-container>
+
+     
+     
+ </div>
+ <div *ngIf="!(user | async)?.uid">
+      <goi-auth></goi-auth>
+ </div>
