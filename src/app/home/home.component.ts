@@ -2,22 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'goi-home',
-  template: `
-    <p>
-      home Works!
-    </p>
-  <div>
-  <canvas
-      name="bar-chart"
-      baseChart
-      [datasets]="chartData"
-      [labels]="chartLabels"
-      [options]="chartOptions"
-      legend="true"
-      chartType="bar"></canvas>
-   </div>
-  `,
-  styles: []
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.scss']
 })
 export class HomeComponent implements OnInit {
 

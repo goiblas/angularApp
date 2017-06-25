@@ -4,3 +4,12 @@ body {
     font-family: Roboto, Arial, sans-serif; 
     margin: 0;
 }
+
+html {
+    box-sizing: border-box;
+}
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}

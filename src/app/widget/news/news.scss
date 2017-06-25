@@ -1,0 +1,35 @@
+.bg  {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    background-color: #444;
+
+    img{
+        top: 50%;
+        transform: translateY(-50%);
+        position: relative;
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+    }
+}
+.card-news {
+    height: 100%;
+    position: relative;
+}
+.content {
+    position: relative;
+    height: 100%;
+    color: #fff;
+    z-index: 2;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.64) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.1) 100%);
+}
+
+.header-buttons {
+    color: rgba(0,0,0,0.4);
+    margin-bottom: auto;
+    text-align: right;
+}

@@ -1,0 +1,37 @@
+
+<div class="grid">
+  <div class="grid-cell a">
+      <goi-news></goi-news>
+    </div>
+  <div class="grid-cell b">
+      <goi-live-sales
+      valueCurrent="12999"
+      valueWhole="30000"
+      valueTitle="Google"
+      ></goi-live-sales>
+            <goi-live-sales
+      valueCurrent="3800"
+      valueWhole="10000"
+      valueTitle="Yahoo"
+      ></goi-live-sales>
+            <goi-live-sales
+      valueCurrent="1900"
+      valueWhole="24000"
+      valueTitle="Bing"
+      ></goi-live-sales>
+  </div>
+  <div class="grid-cell c">C</div>
+  <div class="grid-cell d">  <div>
+  <canvas
+      name="bar-chart"
+      baseChart
+      [datasets]="chartData"
+      [labels]="chartLabels"
+      [options]="chartOptions"
+      legend="true"
+      chartType="bar"></canvas>
+   </div>
+   </div>
+  <div class="grid-cell e">E</div>
+
+</div>

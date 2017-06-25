@@ -5,4 +5,30 @@ md-sidenav {
 
 md-sidenav-container {
   min-height: calc(100vh - 64px);
+  background-color: #f4f4f4;
+}
+.userPhoto {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-left: 8px;
+  
+  img {
+    width: 100%;
+    height:auto;
+    display: block;
+  }
+}
+.userName {
+  font-size: 15px;
+  font-weight: 300;
+}
+.mToolbar {
+  background-color: #fff;
+  color: #222;
+}
+.mSidenav {
+  background-color: #353b44;
+  color: #fff;
 }

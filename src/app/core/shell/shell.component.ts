@@ -22,11 +22,11 @@ export class ShellComponent implements OnInit {
   }
 
   @HostListener('window:resize')
-  updateSide(){
-    if( window.innerWidth < 960){
+  updateSide() {
+    if ( window.innerWidth < 960) {
       this.stateSide = false;
       this.modeSide = 'over';
-    }else{
+    }else {
       this.stateSide = true;
       this.modeSide = 'side';
     }

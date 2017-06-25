@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ChartsModule} from 'ng2-charts';
+import { WidgetModule } from './../widget/widget.module';
 
 const routes: Routes = [
  {
@@ -15,7 +16,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ChartsModule
+    ChartsModule,
+    WidgetModule
   ],
   declarations: [HomeComponent]
 })

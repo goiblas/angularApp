@@ -17,7 +17,7 @@ import { environment } from './../../environments/environment';
 // material
 import {
    MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule,
-   MdInputModule, MdTabsModule, MdProgressBarModule, MdSidenavModule
+   MdInputModule, MdTabsModule, MdProgressBarModule, MdSidenavModule, MdListModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -55,6 +55,7 @@ const routes: Routes = [
     MdProgressBarModule,
     SharedModule,
     MdSidenavModule,
+    MdListModule,
     AuthModule
   ],
   declarations: [ShellComponent, TopBarComponent, MainContentComponent ],
