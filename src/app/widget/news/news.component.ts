@@ -27,12 +27,13 @@ import { FirebaseListObservable } from 'angularfire2/database';
 
 export class NewsComponent implements OnInit {
   currentNew: FirebaseListObservable<any[]>;
-  news: any;
 
   constructor( private newsService: NewsService) {
   }
 
   ngOnInit() {
+    this.currentNew = this.newsService.getLastNew();
+
     const myNew = {
       title: 'The Incredible Italian Island You\'ve Never Heard Of',
       description: 'Plan a visit to Ischia, but don\'t let the secret out',
@@ -41,8 +42,6 @@ export class NewsComponent implements OnInit {
       photo: 'http://www.nationalgeographic.com/content/dam/travel/2017-digital/ischia-italy/boats-sant-angelo-ischia-italy.adapt.1900.1.jpg'
     }
 
-    this.currentNew = this.newsService.lastNew;
-    this.news = this.newsService.news;
   }
 
   refresh() {

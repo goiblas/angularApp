@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class NewsService {
 
-news: FirebaseListObservable<any[]>;
-lastNew: FirebaseListObservable<any[]>;
 selectDate: Subject<any>;
 arrayDate: string[];
 currentNew: number;
@@ -15,9 +13,7 @@ currentNew: number;
   constructor( private db: AngularFireDatabase) {
     this.currentNew = 0;
     this.selectDate = new Subject();
-    this.news = this.db.list('/news');
     this.getDates();
-    this.lastNew = this.getLastNew();
   }
 
   getDates() {
@@ -47,6 +43,7 @@ currentNew: number;
   }
 
   getLastNew() {
+    this.getDates();
     return this.db.list('/news', {
       query: {
         orderByChild: 'date',
