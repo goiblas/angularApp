@@ -24,6 +24,11 @@ import { MdList } from '@angular/material';
         <md-icon>attach_money</md-icon>
        Cash</a>
   </md-list-item>
+    <md-list-item>
+     <a md-line [routerLink]="[ 'books' ]" class="link-nav">
+        <md-icon>book</md-icon>
+       Library</a>
+  </md-list-item>
 </md-nav-list>
 
   `,

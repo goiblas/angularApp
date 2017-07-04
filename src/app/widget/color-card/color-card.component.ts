@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'goi-color-card',
@@ -21,17 +21,18 @@ import { Component, OnInit, Input } from '@angular/core';
   `,
   styleUrls: ['./color-card.scss']
 })
-export class ColorCardComponent implements OnInit {
-@Input()
+export class ColorCardComponent implements OnInit, OnDestroy {
+  @Input()
 bg: string;
 
+  timer: any;
   public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
   public doughnutChartData: number[] = [350, 450, 100];
 
   constructor() { }
 
   ngOnInit() {
-    setInterval(this.animate, 6000);
+    this.timer = setInterval(this.animate, 6000);
   }
 
   animate() {
@@ -48,5 +49,8 @@ bg: string;
 
   getBackground() {
     return {'background-color': this.bg}
+  }
+  ngOnDestroy(): void {
+    clearInterval(this.timer);
   }
 }

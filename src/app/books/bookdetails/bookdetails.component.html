@@ -1,0 +1,29 @@
+
+<button [routerLink]="[ '/books' ]">Volver</button>
+
+<div *ngIf="book;else loading;" [style.font-size.px]="size">
+
+    <goi-fontsize
+    [(size)]= "size"
+    ></goi-fontsize>
+
+<img [src]="book?.volumeInfo.imageLinks.small" alt="" style="float:left;">
+<h2>{{book.volumeInfo.title}}</h2>
+<ul *ngFor=" let author of book?.volumeInfo.authors">
+    <li>{{author}}</li>
+</ul>
+<p>{{book?.volumeInfo.publishedDate}}</p>
+<p>{{book?.volumeInfo.description}}</p>
+
+
+<div *ngIf="!isFavourite">
+    <button (click)="addFavourites()"><i class="material-icons">star</i> Añadir a favoritos</button>
+</div>
+
+<div *ngIf="isFavourite">
+    <button (click)="removeFavourites()"><i class="material-icons">star</i> quitar de favoritos</button>
+</div>
+
+<a [href]="book?.volumeInfo.infoLink" target="_blank">Comprar</a>
+</div>
+<ng-template #loading>Cargando...</ng-template>

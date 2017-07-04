@@ -3,16 +3,18 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './input/input.component';
 import { AuthService } from './auth.service';
+import { FontsizeComponent } from './fontsize/fontsize.component';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule
   ],
-  declarations: [InputComponent],
+  declarations: [InputComponent, FontsizeComponent],
   providers: [AuthService],
   exports: [
-    InputComponent
+    InputComponent,
+    FontsizeComponent
   ]
 })
 export class SharedModule { }

@@ -47,7 +47,6 @@ export class AuthComponent implements OnInit {
 
 
   saveUser(user): void {
-    console.log(user);
     const id = user.uid || user.user.uid || 0;
      const newUser = {
        'nombre': user.displayName || user.user.displayName ||  'Anónimo',

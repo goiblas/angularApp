@@ -1,0 +1,15 @@
+<form (submit)="getResult()" [formGroup]="searchForm">
+    <input placeholder="search for a book.." type="text"
+    formControlName="query">
+</form>
+
+<div *ngFor=" let book of booksData">
+
+
+<a [href]="book?.id" (click)="onSelect($event, book.id)">
+    <img class="img-thumbnail" [src]="book?.volumeInfo.imageLinks.thumbnail">
+</a>
+    <h2>{{book?.volumeInfo.title}}</h2>
+    <p>{{book?.volumeInfo.description}}</p>
+
+</div>

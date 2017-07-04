@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'cash',
     loadChildren: './../cash/cash.module#CashModule'
+  },
+  {
+    path: 'books',
+    loadChildren: './../books/books.module#BooksModule'
   }
 ];
 
